@@ -1,0 +1,60 @@
+# Project: AI-Powered Real Estate Listing Finder
+## Description:
+We are building an AI-powered web app where real estate agents and agencies can log in, search for listings, and get AI-generated recommendations. The app will integrate multiple APIs (Resales, Idealista) and use AWS for AI processing, data storage, and hosting.
+
+## Tech Stack:
+- **Frontend:** React (Next.js or Vite) + TailwindCSS (Recreate Bubble UX)
+- **Backend:** Node.js (Express) / Python (FastAPI)
+- **Database:** AWS RDS (PostgreSQL / MySQL) or DynamoDB
+- **AI Model:** AWS Bedrock / OpenAI API (GPT-4 Turbo)
+- **Hosting & Serverless:** AWS Lambda, API Gateway, S3, CloudFront
+- **Authentication:** AWS Cognito / Auth0 / Firebase
+- **API Integrations:** Resales API, Idealista API, AWS AI Model (for listing recommendations)
+- **PDF Exporting:** jsPDF or Puppeteer (for client report downloads)
+- **Static IP Setup:** AWS NAT Gateway / EC2 Proxy for API connections
+
+## Features to Build:
+### **1. User Authentication & Dashboard**
+- Implement **secure login** using AWS Cognito / Firebase
+- User **roles & permissions** (Agency, Agent)
+- Dashboard UI following Bubble template’s UX
+- Profile management for agents/agencies
+
+### **2. AI-Powered Listing Search**
+- Connect **Resales + Idealista API** for listing data
+- Implement **AI-powered search & recommendations**
+- User inputs search criteria → AI suggests listings
+- Display results in a **responsive UI grid**
+
+### **3. AI Chatbot for Listings**
+- Create a chatbot where agents **describe their needs**
+- AI suggests listings based on user queries (AWS AI / OpenAI)
+- Save chat history for each user session
+
+### **4. API & Server Setup**
+- Deploy **Node.js/Python backend** on AWS Lambda
+- Set up **API Gateway** to route requests
+- Connect **static IP** for API calls using NAT Gateway / EC2 Proxy
+- Optimize data fetching from **Resales API, Idealista API**
+
+### **5. PDF Report Generation**
+- Allow agents to **export search results** as PDFs
+- Use **jsPDF / Puppeteer** for high-quality reports
+
+### **6. Mobile Optimization**
+- Ensure full mobile responsiveness (React + TailwindCSS)
+
+### **7. Admin Panel & Analytics**
+- Dashboard for **admin to track user activity**
+- Usage analytics for **API requests & AI interactions**
+
+## Deployment Steps:
+1️⃣ Set up **AWS Lambda + API Gateway** for backend  
+2️⃣ Deploy **React frontend on AWS S3 + CloudFront**  
+3️⃣ Configure **database (AWS RDS / DynamoDB)**  
+4️⃣ Integrate **Resales & Idealista APIs**  
+5️⃣ Implement **AI model for smart listing search**  
+6️⃣ Optimize and launch MVP for beta users 🚀  
+
+## Goal:
+We want to recreate the Bubble template’s UX in a **fully custom-built AI web app** on AWS, allowing **fast searches, AI-based listing recommendations, and report generation** for real estate agents/agencies.

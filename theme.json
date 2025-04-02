@@ -1,0 +1,15 @@
+{
+  "variant": "professional",
+  "primary": "hsl(146, 100%, 50%)",
+  "appearance": "dark",
+  "radius": 0.5,
+  "background": "hsl(214, 13%, 9%)",
+  "foreground": "hsl(0, 0%, 100%)",
+  "muted": "hsl(216, 7%, 11%)",
+  "muted-foreground": "hsl(0, 0%, 60%)",
+  "border": "hsl(146, 100%, 50%, 0.1)",
+  "card": "hsl(216, 7%, 11%)",
+  "card-foreground": "hsl(0, 0%, 100%)",
+  "popover": "hsl(216, 7%, 11%)",
+  "popover-foreground": "hsl(0, 0%, 100%)"
+}

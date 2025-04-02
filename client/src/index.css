@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Marsek';
+  src: url('/assets/marsek.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.font-marsek {
+  font-family: 'Marsek', sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased text-foreground min-h-screen;
+    background-color: #0F0F0F;
+    overflow-x: hidden; /* Only hide horizontal overflow */
+    width: 100%;
+    position: relative;
+  }
+}
+
+@layer utilities {
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+    filter: brightness(1) hue-rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(5deg);
+    filter: brightness(1.2) hue-rotate(15deg);
+  }
+}
+
+svg {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translatex(-50%);
+}
+
+svg g {
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+#a {
+  animation: clockwise 8s linear infinite;
+}
+
+#b {
+  animation: clockwise 10s linear infinite;
+}
+
+#d {
+  animation: clockwise 12s linear infinite;
+}
+
+#f {
+  animation: clockwise 9s linear infinite;
+}
+
+#c {
+  animation: anticlockwise 9s linear infinite;
+}
+
+#e {
+  animation: anticlockwise 11s linear infinite;
+}
+
+@keyframes clockwise {
+  from {
+    transform: rotatez(0deg);
+  }
+  to {
+    transform: rotatez(360deg);
+  }
+}
+
+@keyframes anticlockwise {
+  from {
+    transform: rotatez(0deg);
+  }
+  to {
+    transform: rotatez(-360deg);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  svg {
+    width: fit-content;
+    margin: 10px;
+  }
+
+  /* Ensure content doesn't overflow on mobile */
+  .container {
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+}

@@ -1,0 +1,61 @@
+Here’s a **prompt for Replit** that defines the structure for your **AI-powered client listing summary generator** in your real estate app. This prompt will guide the AI in **Replit** to generate messages that agents can send to clients after finding relevant listings.  
+
+---
+
+### **Prompt for Replit AI Text Generator**  
+
+```python
+# AI-Powered Client Listing Summary Generator
+# This script will generate a personalized message summarizing listings for a client based on agent-provided details.
+
+import openai
+
+def generate_listing_summary(client_name, summary_title, listing_urls, preferences, message_style, cta):
+    prompt = f"""
+    You are an AI assistant helping real estate agents generate personalized listing summaries for their clients.
+    Create a message that is engaging, informative, and formatted clearly.
+
+    **Client Name:** {client_name if client_name else "No name provided"}  
+    **Summary Title:** {summary_title if summary_title else "Handpicked Listings for You"}  
+    **Listings:**  
+    {listing_urls if listing_urls else "No listings provided"}  
+    **Client Preferences:** {preferences if preferences else "No specific preferences"}  
+    **Message Style:** {message_style}  
+    **Call-to-Action:** {cta}  
+
+    ### **Instructions:**
+    - Use a professional yet friendly tone.
+    - Clearly highlight key property features like price, location, and special amenities.
+    - Use bullet points for listing details.
+    - Include a warm closing and call to action.
+
+    **Generate the message below:**
+    """
+
+    response = openai.ChatCompletion.create(
+        model="gpt-4",
+        messages=[{"role": "system", "content": prompt}]
+    )
+
+    return response['choices'][0]['message']['content']
+
+# Example usage:
+client_name = "Lena"
+summary_title = "Exclusive Marbella Listings"
+listing_urls = "- [Luxury Villa](#)\n- [Modern Penthouse](#)\n- [Beachfront Estate](#)"
+preferences = "Luxury villa, sea views, 3+ bedrooms, modern design"
+message_style = "Friendly Message (WhatsApp format)"
+cta = "Would you like to schedule a viewing?"
+
+summary = generate_listing_summary(client_name, summary_title, listing_urls, preferences, message_style, cta)
+print(summary)
+```
+
+---
+
+### **How This Works in Replit:**
+1. **Agent Inputs Data** (Client name, title, listings, preferences, message style, CTA).  
+2. **AI Processes the Data** and generates a structured yet natural-sounding message.  
+3. **Output:** A ready-to-send message tailored for WhatsApp, Email, or PDF sharing.  
+
+Let me know if you need **any modifications**! 🚀
